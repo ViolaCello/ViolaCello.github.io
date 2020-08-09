@@ -1,11 +1,11 @@
 # Site settings
 author: Anthony Lepore
-title: 
+title: Anthony Lepore
 header-img: img/home-bg.png
 email: violacellonyc@gmail.com
 copyright_name: Anthony Lepore
 description: > # this means to ignore newlines until "baseurl:"
-  
+  Anthony Lepore
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: 
 github_username:  ViolaCello
