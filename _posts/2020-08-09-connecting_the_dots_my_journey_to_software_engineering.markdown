@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Connecting the Dots: My Journey to Software Engineering"
-date:       2020-08-09 16:22:02 +0000
+date:       2020-08-09 12:22:03 -0400
 permalink:  connecting_the_dots_my_journey_to_software_engineering
 ---
 
