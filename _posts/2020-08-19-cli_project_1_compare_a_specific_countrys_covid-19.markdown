@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "CLI Project 1: Compare a Specific Country's Covid-19 "
-date:       2020-08-19 20:56:53 +0000
+date:       2020-08-19 16:56:54 -0400
 permalink:  cli_project_1_compare_a_specific_countrys_covid-19
 ---
 
@@ -20,16 +20,16 @@ The parameters of the project were specific:
 * Avoid repeating your code (also known by the acronym DRY).
 * Use iterations
 
-Two of the three necessary classes were easily conceived of: There would need to be an API Class that would fetch the live data, and there would be a CLI Class where the user would interact with the available data via the terminal.  What I was having trouble with was the third necessary class, and this was because I could not envisage this third class without an additional fourth class.  I had incorrectly assumed that my Information Class would also function as the "work flow" class, giving the instructions to the CLI as to what should be done after each menu level.  This premise necessitated a fourth class that would story all the data of each country, called a Country Class.  However, after having my Information Class continually trip over itself, to the point where I began referring to it as the Misinformation Class, it dawned on me a thought which has now become my first coding axiom:
+Two of the three necessary classes were easily conceived of: There would need to be an API Class that would fetch the live data, and there would be a CLI Class where the user would interact with the available data via the terminal.  What I was having trouble with was the third necessary class, and this was because I could not envisage this third class without an additional fourth class.  I had incorrectly assumed that my Information Class would also function as the "work flow" class, giving the instructions to the CLI as to what should be done after each menu level.  This premise necessitated a fourth class that would store all the data of each country, called a Country Class.  However, after having my Information Class continually trip over itself, to the point where I began referring to it as the Misinformation Class, it dawned on me a thought which has now become my first coding axiom:
 
 > If the name of the class that you designed has become an antonym of itself, remove it.
                            - Tony Lepore
 
-Now I had my workflow happening.  The API would collect the data from the web as per its function, the Country Class would receive the data in the form of a hash and store that information into class variables for the relevant data (which for this project is cases Confirmed, Recovered, Critical, and Deaths), which would be called upon from the CLI Class if the user requested it.  The CLI would also handle the workflow, since so much of what the program needed to do depended upon the selections from the user, who interacted directly with the CLI Class.
+Now I had my workflow happening.  The API would collect the data from the web as per its function, the Country Class would receive the data in the form of a hash and store that information into class variables for the relevant data (which for this project are the cases Confirmed, Recovered, Critical, and Deaths), which would be called upon from the CLI Class if the user requested it.  The CLI would also handle the workflow, since so much of what the program needed to do depended upon the selections from the user, who interacted directly with the CLI Class.
 
-After some trial and error, it was functioning as it should.  However, I quickly bored of the raw numbers that the CLI was able to generate for me.  What did these numbers mean anyway, if not for a comparison to another dataset.  I decided that the best way to achieve some sort of relevance with these numbers would be to compare them with the total world Covid-19 numbers.  This information I found in a different API (but from the same API family).  The first step would be prompt the user to answer whether they would even care for this comparison.  Then if so, what subset of numbers would be compared?  This did not take too long to implement, since I had the world data populate once the program started running so that it would be at the ready for comparison at any moment.  
+After some trial and error, it was functioning as it should.  However, I was quickly bored of the raw numbers that the CLI was able to generate for me.  What did these numbers mean anyway, if not for a comparison to another dataset.  I decided that the best way to achieve some sort of relevance with these numbers would be to compare them with the total world Covid-19 numbers.  This information I found in a different API (but from the same API family).  The first step would be to prompt the user to answer whether they would even care for this comparison.  Then if so, what subset of numbers would be compared?  This did not take too long to implement, since I had the world data populate once the program started running so that it would be at the ready for comparison at any moment.  
 
-The part that really gave me trouble was getting a usable percentage number the data I already had.  I am not accustomed to having a computer return to me an inaccurate calculation.  But in Ruby, 50 divided by 100 somehow equals zero.  I tried attaching `.to_f` to the end of my calculation.  Ruby responded by mocking me with the return of `0.0` - obviously I was dealing with a wiseguy...
+The part that really gave me trouble was getting a usable percentage number from the data I already had.  I am not accustomed to having a computer return to me an inaccurate calculation.  But in Ruby, 50 divided by 100 somehow equals zero.  I tried attaching `.to_f` to the end of my calculation.  Ruby responded by mocking me with the return of `0.0` - obviously I was dealing with a wiseguy...
 
 After spending way too long on trying to get a way for this line to return a number like 0.72 or 1.44
 ```
