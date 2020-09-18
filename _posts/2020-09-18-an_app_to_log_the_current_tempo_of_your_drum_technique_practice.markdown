@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "An App to Log the Current Tempo of your Drum Technique Practice"
-date:       2020-09-18 18:29:42 +0000
+date:       2020-09-18 14:29:43 -0400
 permalink:  an_app_to_log_the_current_tempo_of_your_drum_technique_practice
 ---
 
@@ -22,7 +22,7 @@ The navigations between my `controllers` and the `views` was very clear to navig
 
 In the future, once we move onto learning Ruby on Rails, I would like to add a Comments Class to the Community page so that people can comment on other drummer’s progress and perhaps offer some practical tips, making this a more robust social/community experience.
 
-If you would like to see a short video of the app in action, here is the link: [https://youtu.be/ejKy0gR7RRY](http://)
+If you would like to see a short video of the app in action, here is the link: [https://youtu.be/ejKy0gR7RRY]
 
 Below are the two .perge class methods in the Goal Class.
 
