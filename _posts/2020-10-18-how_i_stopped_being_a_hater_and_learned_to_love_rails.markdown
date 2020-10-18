@@ -39,7 +39,8 @@ Ok, one line, easy to see what it does, and its close to the top of the model fi
 Pretty easy to see what I'm up to with these methods.  Very easy to read.  I see you, Scope Methods...
 
 And what's even more fun is that now, all on one line, I can call:
-```Venue.by_state(input).first.events.upcoming.order(:curtain)```
+
+`Venue.by_state(input).first.events.upcoming.order(:curtain)`
 
 where Event belongs_to a Venue, which has_many Events.  Iterating over this in the Views was very clear and smooth now.
 
