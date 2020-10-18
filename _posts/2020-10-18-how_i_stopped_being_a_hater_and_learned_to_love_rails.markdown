@@ -1,24 +1,24 @@
 ---
 layout: post
 title:      "How I Stopped Being a Hater and Learned to Love Rails "
-date:       2020-10-18 20:55:25 +0000
+date:       2020-10-18 16:55:26 -0400
 permalink:  how_i_stopped_being_a_hater_and_learned_to_love_rails
 ---
 
 
-After completing the module for Ruby’s Sinatra, I felt like I’d be coding like Bill Gates by tomorrow morning.  The routing was so clear, straightforward, and may I say, intuitive.  Eight weeks of slugging away at Ruby object methods and SQL database queries left me wondering if I had it in me to proceed in a software engineering bootcamp.  Then along comes Sinatra with its CRUD functionality so apparent: GET this, POST that, PATCH this up over here, DELETE that over there.  ActiveRecord making database searches so clear that I felt like I was just asking the computer in plain speech language what I wanted as if I were ordering a pastrami sandwich at the deli.      
+After completing the module for Ruby’s Sinatra, I felt like I’d be coding like Bill Gates by the next morning.  The routing was so clear, straightforward, and may I say, intuitive.  Eight weeks of slugging away at Ruby object methods and SQL database queries left me wondering if I had it in me to proceed in a software engineering bootcamp.  Then along comes Sinatra with its CRUD functionality so apparent: GET this, POST that, PATCH this up over here, DELETE that over there.  ActiveRecord making database searches so clear that I felt like I was just asking the computer inmy native  language what I wanted as if I were ordering a pastrami sandwich at the deli.      
 
-And all the while I kept hearing, “If you love Sinatra, just wait until you work with Rails – it's like Sinatra with Magic!” What I wasn’t ready for was that Rails was actually the *devil’s magic*.  Rails to me was the legend of the Monkey’s Paw.  “We’ve made routing so simple for you in Rails that it goes where you want all by itself!”  Which in practice was as unnerving as ordering a car service, getting in the backseat, then realizing you’re in a driverless car.  It should be ok, but you typed in 55 Main Street, of which there are thousands of in your country and you’re not sure which one it thinks it should drive to. 
+And all the while I kept hearing, “If you love Sinatra, just wait until you work with Rails – it's like Sinatra with Magic!” What I wasn’t ready for was that Rails was actually the *devil’s magic*.  Rails to me was the legend of the Monkey’s Paw.  “We’ve made routing so simple for you in Rails that it goes where you want all by itself!”  Which in practice was as unnerving as ordering a car service, getting in the backseat, then realizing you’re in a driverless car.  It should be ok, but you typed in 55 Main Street, of which there are thousands of 55 Main Streets in your country and you’re not sure which one it thinks it should drive to. 
 
 Three days into my Rails project and I had to do something about the anxiety and frustration.  From the notes I took during the lectures, there usually seemed to be a` byebug` commented out at the beginning of each method in the Controllers.  And in a rare moment of clarity, it came to me: What would we check once that method was hit? 
 
 ***It’s the params! ***
 
-Armed with this recovered knowledge, I got in there.  I dropped `byebug` all over the place in my Controller methods.  Ok, what do the params look like?  Ok, here’s the` :id`  and it matches the `:id` of the View that it was coming from.  How can I apply this to what I know about Sinatra?  In Sinatra, we'd write `get '/user/:id/edit' do` but in Rails, this was simply: `def edit` and Rails knows the rest. We are already in the UserController, therefore, no need to write `get /user` whilst the :id is still in the params, so Rails already knows the `/user/:id` and since the method is called `edit` it just completes this for us.  Now, `get '/user/:id/edit` becomes `def edit`.   Same thing on a redirect.  In Sinatra, it was `redirect "/profile/#{@profile.id}/edit"` whereas Rails can now handle this with: `redirect_to user_edit_path`.  Why did I hate this?
+Armed with this recovered knowledge, I got in there.  I dropped `byebug` all over the place in my Controller methods.  Ok, what do the params look like?  Ok, here’s the` :id`  and it matches the `:id` of the View that it was coming from.  How can I apply this to what I know about Sinatra?  In Sinatra, we'd write `get '/user/:id/edit' do` but in Rails, this was simply: `def edit` and now I realized how Rails knows the rest: We are already in the UserController, therefore, no need to write `get /user` whilst the :id is still in the params, so Rails already knows the `/user/:id` and since the method is called `edit` it just completes this for us.  Now, `get '/user/:id/edit` becomes `def edit`.   Same thing on a redirect.  In Sinatra, it was `redirect "/profile/#{@profile.id}/edit"` whereas Rails can now handle this with: `redirect_to user_edit_path`.  Why did I hate this?
 
 ## Don't be Afraid of Scope
 
-Another thing that orginally drove me mad in Rails: Scope methods.  Why do we need scope methods?  They don't do anything that a class method coudn't do.   I reluctantly re-wrote my Venue Class method which seached for venues by state, originally:
+Another thing that orginally drove me mad in Rails: Scope methods.  Why do we need scope methods?  They don't do anything that a class method couldn't do.   I reluctantly re-wrote my Venue Class method which seached for venues by state, originally:
 ```
  def self.by_state(input)
      self.where("state = ?", input)
@@ -40,7 +40,7 @@ Pretty easy to see what I'm up to with these methods.  Very easy to read.  I see
 
 And what's even more fun is that now, all on one line, I can call:
 ```Venue.by_state(input).first.events.upcoming.order(:curtain)```
-where Event belongs_to a Venue, which has_many Events.  
+where Event belongs_to a Venue, which has_many Events.  Iterating over this in the Views was very clear and smooth now.
 
 ## Time for Action:  Enter the ```before_action```
 How many times in Sinatra did I type ```@user = User.find_by(id: params[:id])```?  Almost every method in my UserController began with this line, or had this line of code somewhere in there.  Now, with a simple private method: 
