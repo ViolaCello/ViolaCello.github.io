@@ -5,6 +5,8 @@ date:       2020-10-18 16:55:26 -0400
 permalink:  how_i_stopped_being_a_hater_and_learned_to_love_rails
 ---
 
+> "If you want to fly in the sky, you need to leave the earth. If you want to move forward, you need to let go the past that drags you down."
+-- Amit Ray
 
 After completing the module for Ruby’s Sinatra, I felt like I’d be coding like Bill Gates by the next morning.  The routing was so clear, straightforward, and may I say, intuitive.  Eight weeks of slugging away at Ruby object methods and SQL database queries left me wondering if I had it in me to proceed in a software engineering bootcamp.  Then along comes Sinatra with its CRUD functionality so apparent: GET this, POST that, PATCH this up over here, DELETE that over there.  ActiveRecord making database searches so clear that I felt like I was just asking the computer inmy native  language what I wanted as if I were ordering a pastrami sandwich at the deli.      
 
