@@ -40,9 +40,11 @@ Pretty easy to see what I'm up to with these methods.  Very easy to read.  I see
 
 And what's even more fun is that now, all on one line, I can call:
 ```Venue.by_state(input).first.events.upcoming.order(:curtain)```
+
 where Event belongs_to a Venue, which has_many Events.  Iterating over this in the Views was very clear and smooth now.
 
 ## Time for Action:  Enter the ```before_action```
+
 How many times in Sinatra did I type ```@user = User.find_by(id: params[:id])```?  Almost every method in my UserController began with this line, or had this line of code somewhere in there.  Now, with a simple private method: 
 ```
 def get_user
