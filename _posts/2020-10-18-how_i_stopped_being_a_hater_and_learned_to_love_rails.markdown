@@ -46,12 +46,14 @@ where Event belongs_to a Venue, which has_many Events.  Iterating over this in t
 
 ## Time for Action:  Enter the ```before_action```
 
-How many times in Sinatra did I type ```@user = User.find_by(id: params[:id])```?  Almost every method in my UserController began with this line, or had this line of code somewhere in there.  Now, with a simple private method: 
+How many times in Sinatra did I type `@user = User.find_by(id: params[:id])` ?  Almost every method in my UserController began with this line, or had this line of code somewhere in there.  Now, with a simple private method: 
+
 ```
 def get_user
 @user = User.find_by(id: params[:id])
 end
 ```
+
 and a ```before_action :get_user, except: [:index, :new, :create]``` near the top of the UserController, I can pull all this redundant code out of my methods, out of my GitHub storage, and out of my life.  
 
 Working on this project helped me to appreciate Rails.  And I don't even get me started on `render partial:` for keeping it DRY.  
