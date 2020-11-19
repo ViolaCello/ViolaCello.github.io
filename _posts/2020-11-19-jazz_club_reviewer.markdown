@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Jazz Club Reviewer"
-date:       2020-11-19 22:43:13 +0000
+date:       2020-11-19 17:43:14 -0500
 permalink:  jazz_club_reviewer
 ---
 
