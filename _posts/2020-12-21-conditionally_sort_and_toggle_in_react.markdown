@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Conditionally Sort and Toggle in React"
-date:       2020-12-21 22:23:35 +0000
+date:       2020-12-21 17:23:36 -0500
 permalink:  conditionally_sort_and_toggle_in_react
 ---
 
